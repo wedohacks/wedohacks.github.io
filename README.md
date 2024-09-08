@@ -6,8 +6,7 @@
 
 ## 📂 **What’s Inside**
 
-- **`file.txt`**: This is where the magic begins. Each line holds a piece of the puzzle. 📜
-- **`index.html`**: The gateway to the data in `file.txt`. 🕸️
+- **`*.txt`**: the payloads and hacking stuffs are added here 📜
 
 ## 🛠️ **Setup Instructions**
 
