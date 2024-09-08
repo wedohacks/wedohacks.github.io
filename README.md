@@ -6,8 +6,8 @@
 
 ## 📂 **What’s Inside**
 
-- **`*.txt`**: the payloads and hacking stuffs are added here 📜
-- - **`*poc`**: bug report templates are added here 📜
+- **`*.txt`**: the payloads and hacking stuffs are added here... 📜
+- - **`poc`**: bug report templates are added here...
 
 ## 🛠️ **Setup Instructions**
 
