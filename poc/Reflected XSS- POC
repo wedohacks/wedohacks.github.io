@@ -1,0 +1,20 @@
+RXSS Leads to Account Takeover
+
+
+Reflected Cross-Site Scripting (RXSS) is a type of security vulnerability where an attacker injects malicious scripts into content from a website that is then reflected back to the user's browser. If an attacker can exploit RXSS to leak internal IP addresses, and those addresses are indexed by a service like Shodan, it could potentially lead to more severe security issues, including account takeover.
+
+
+Platform - WEB
+
+
+Vulnerability Type - Reflected XSS
+
+
+Steps to Reproduce
+
+
+Open the below Url, you can see the payload triggers and its get reflects
+
+https://
+
+https://
