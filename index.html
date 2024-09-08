@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack Stuffs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hack Stuffs</h1>
+    </header>
+    <main>
+        <section id="file-viewer">
+            <!-- Content will be injected here -->
+        </section>
+        <nav>
+            <button onclick="showFile('1500xss.txt')">1500xss</button>
+            <button onclick="showFile('html-injection.txt')">html-injection</button>
+            <button onclick="showFile('1500xss.txt')">1500xss</button>
+            <button onclick="showFile('lfi.txt')">lfi</button>
+            <button onclick="showFile('redirect.txt')">redirect</button>
+            <button onclick="showFile('xss.txt')">xss-old</button>
+            <button onclick="showFile('bypass-403.txt')">bypass-403</button>
+            <button onclick="showFile('blindxss-poc-report.txt')">blindxss-poc-report</button>
+            <button onclick="showFile('example.pdf')">Show PDF File</button>
+            <button onclick="showFile('README.md')">Show Markdown File</button>
+            <button onclick="showFile('image.jpg')">Show Image</button>
+        </nav>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
