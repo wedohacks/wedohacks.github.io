@@ -1,16 +1,18 @@
-## Hi there 👋
+# 🚀 **HACKER README.md** 🚀
 
-<!--
-**wedohacks/wedohacks** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+**WeDoHacks!**
 
-Here are some ideas to get you started:
+⚡ There is always one more bug to fix!
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 📂 **What’s Inside**
+
+- **`file.txt`**: This is where the magic begins. Each line holds a piece of the puzzle. 📜
+- **`index.html`**: The gateway to the data in `file.txt`. 🕸️
+
+## 🛠️ **Setup Instructions**
+
+### 1. **Get the Files**
+Clone this repository or download the files to your local machine:
+
+```sh
+git clone https://github.com/wedohacks/wedohacks.github.io.git
