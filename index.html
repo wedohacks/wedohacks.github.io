@@ -3,31 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hack Stuffs</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>WEDOHACKS</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            overflow: hidden;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            transition: background 1s ease;
+        }
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #content {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px; /* Adjusted margin for the image */
+        }
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 75px; /* Make the image round */
+            margin-bottom: 20px; /* Space below the image */
+        }
+        .column {
+            display: block; /* Change to block for vertical arrangement */
+            width: 300px; /* Set a fixed width */
+            margin: 10px auto; /* Center the columns */
+            border: 1px solid #00ff00;
+            padding: 15px;
+            opacity: 0.8;
+            transition: background 0.3s;
+            color: white; /* White text color */
+            text-decoration: none; /* Remove underline */
+        }
+        .column:hover {
+            background: rgba(0, 255, 0, 0.2); /* Add hover effect */
+        }
+        button {
+            margin-top: 20px;
+            padding: 15px 30px; /* Increased button size */
+            background: linear-gradient(135deg, #00ff00, #00cc00);
+            border: none;
+            color: black;
+            cursor: pointer;
+            font-size: 18px; /* Larger font size */
+            border-radius: 25px; /* Curved edges */
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(0, 255, 0, 0.3); /* Glow effect */
+            transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s;
+            font-weight: bold; /* Bold text */
+            text-transform: uppercase; /* Uppercase letters */
+            outline: none; /* Remove outline */
+        }
+        button:hover {
+            background: linear-gradient(135deg, #00cc00, #00ff00);
+            transform: translateY(-3px); /* Lift effect */
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.8), 0 0 40px rgba(0, 255, 0, 0.5); /* Enhanced glow */
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Hack Stuffs</h1>
-    </header>
-    <main>
-        <section id="file-viewer">
-            <!-- Content will be injected here -->
-        </section>
-        <nav>
-            <button onclick="showFile('1500xss.txt')">1500xss</button>
-            <button onclick="showFile('html-injection.txt')">html-injection</button>
-            <button onclick="showFile('1500xss.txt')">1500xss</button>
-            <button onclick="showFile('lfi.txt')">lfi</button>
-            <button onclick="showFile('redirect.txt')">redirect</button>
-            <button onclick="showFile('xss.txt')">xss-old</button>
-            <button onclick="showFile('bypass-403.txt')">bypass-403</button>
-            <button onclick="showFile('blindxss-poc-report.txt')">blindxss-poc-report</button>
-            <button onclick="showFile('example.pdf')">Show PDF File</button>
-            <button onclick="showFile('README.md')">Show Markdown File</button>
-            <button onclick="showFile('image.jpg')">Show Image</button>
-        </nav>
-    </main>
-    <script src="script.js"></script>
+    <canvas id="canvas"></canvas>
+    <div id="content">
+        <img src="profile.jpg" alt="Profile Picture" class="profile-pic"> <!-- Adjust the source as needed -->
+        <h1>We Do Hacks</h1>
+        <a href="googledork.html" class="column">Dorking Tool</a>
+        <a href="link2.html" class="column">All Type of Payloads</a>
+        <a href="link3.html" class="column">Free Resources</a>
+        <a href="link4.html" class="column">Write Ups</a>
+        <a href="link5.html" class="column">LinkedIn</a>
+        <a href="link6.html" class="column">YouTube Channel</a>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+
+        const columns = Math.floor(canvas.width / 20);
+        const drops = Array.from({ length: columns }).fill(0);
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00ff00';
+            ctx.font = '20px monospace';
+            for (let i = 0; i < drops.length; i++) {
+                const text = String.fromCharCode(Math.random() * 128);
+                const x = i * 20;
+                const y = drops[i] * 20;
+
+                ctx.fillText(text, x, y);
+                if (y > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0; // Reset to top with slight randomness
+                }
+                drops[i] += Math.random() < 0.5 ? 1 : 2; // Adjust falling speed dynamically
+            }
+        }
+
+        let interval = setInterval(draw, 50);
+
+        // Create button to load listings after a delay of 3 seconds
+        setTimeout(() => {
+            const button = document.createElement('button');
+            button.innerText = 'WE DO HACKS';
+            button.style.position = 'absolute';
+            button.style.top = '50%';
+            button.style.left = '50%';
+            button.style.transform = 'translate(-50%, -50%)';
+            document.body.appendChild(button);
+
+            button.addEventListener('click', () => {
+                button.style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+
+                // Optionally, clear the canvas if you want to stop the rain
+                clearInterval(interval);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            });
+        }, 3000); // Button appears after 3 seconds
+
+    </script>
 </body>
 </html>
