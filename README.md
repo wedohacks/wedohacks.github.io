@@ -1,13 +1,12 @@
-# 🚀 **HACKER README.md** 🚀
-
-**WeDoHacks!**
+# 🚀 **WEDOHACKS README.md** 🚀
 
 ⚡ There is always one more bug to fix!
 
 ## 📂 **What’s Inside**
 
-- **`*.txt`**: the payloads and hacking stuffs are added here... 📜
-- **`poc`**: bug report templates are added here...
+- **`/payloads/*.txt`**: the payloads and hacking stuffs are added here...
+- **`/poc`**: bug report templates are added here...
+- **`/stuffs`**: Juicy Stuffs...
 
 ## 🛠️ **Setup Instructions**
 
