@@ -8,10 +8,6 @@
 - **`/poc`**: bug report templates are added here...
 - **`/stuffs`**: Juicy Stuffs...
 
-## 🛠️ **Setup Instructions**
+## **There is always one more bug to fix**
+© 𝘄𝗲𝗱𝗼𝗵𝗮𝗰𝗸𝘀
 
-### 1. **Get the Files**
-Clone this repository or download the files to your local machine:
-
-```sh
-git clone https://github.com/wedohacks/wedohacks.github.io.git
