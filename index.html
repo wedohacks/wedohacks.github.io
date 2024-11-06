@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEDOHACKS</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            overflow: hidden;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            transition: background 1s ease;
+        }
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #content {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px; /* Adjusted margin for the image */
+        }
+        .column {
+            display: block; /* Change to block for vertical arrangement */
+            width: 300px; /* Set a fixed width */
+            margin: 10px auto; /* Center the columns */
+            border: 1px solid #00ff00;
+            padding: 15px;
+            opacity: 0.8;
+            transition: background 0.3s;
+            color: white; /* White text color */
+            text-decoration: none; /* Remove underline */
+        }
+        .column:hover {
+            background: rgba(0, 255, 0, 0.2); /* Add hover effect */
+        }
+        button {
+            margin-top: 20px;
+            padding: 15px 30px; /* Increased button size */
+            background: linear-gradient(135deg, #00ff00, #00cc00);
+            border: none;
+            color: black;
+            cursor: pointer;
+            font-size: 18px; /* Larger font size */
+            border-radius: 25px; /* Curved edges */
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5), 0 0 30px rgba(0, 255, 0, 0.3); /* Glow effect */
+            transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s;
+            font-weight: bold; /* Bold text */
+            text-transform: uppercase; /* Uppercase letters */
+            outline: none; /* Remove outline */
+        }
+        button:hover {
+            background: linear-gradient(135deg, #00cc00, #00ff00);
+            transform: translateY(-3px); /* Lift effect */
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.8), 0 0 40px rgba(0, 255, 0, 0.5); /* Enhanced glow */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="content">
+        <h1>WE DO HACKS</h1>
+        <a href="googledorks.html" class="column">Dorking Tool</a>
+        <a href="https://medium.com/@wedohacks/" class="column">Write Ups</a>
+        <a href="https://linkedin.com/company/wedohacks" class="column">LinkedIn</a>
+        <a href="https://instagram.com/wedohacks" class="column">Instagram</a>
+        <a href="https://www.youtube.com/@wedohacks" class="column">YouTube</a>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+
+        const columns = Math.floor(canvas.width / 20);
+        const drops = Array.from({ length: columns }).fill(0);
+
+        function draw() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00ff00';
+            ctx.font = '20px monospace';
+            for (let i = 0; i < drops.length; i++) {
+                const text = String.fromCharCode(Math.random() * 128);
+                const x = i * 20;
+                const y = drops[i] * 20;
+
+                ctx.fillText(text, x, y);
+                if (y > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0; // Reset to top with slight randomness
+                }
+                drops[i] += Math.random() < 0.5 ? 1 : 2; // Adjust falling speed dynamically
+            }
+        }
+
+        let interval = setInterval(draw, 50);
+
+        // Create button to load listings after a delay of 3 seconds
+        setTimeout(() => {
+            const button = document.createElement('button');
+            button.innerText = 'WE DO HACKS';
+            button.style.position = 'absolute';
+            button.style.top = '50%';
+            button.style.left = '50%';
+            button.style.transform = 'translate(-50%, -50%)';
+            document.body.appendChild(button);
+
+            button.addEventListener('click', () => {
+                button.style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+
+                // Set background image after button click and make it fixed with opacity
+                document.body.style.backgroundImage = "url('img/wedohacks.jpg')"; // Replace with your image URL
+                document.body.style.backgroundSize = 'cover';
+                document.body.style.backgroundPosition = 'center';
+                document.body.style.backgroundAttachment = 'fixed'; // Keep the background steady
+                document.body.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Add a semi-transparent overlay with 50% opacity
+
+                // Optionally, clear the canvas if you want to stop the rain
+                clearInterval(interval);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            });
+        }, 3000); // Button appears after 3 seconds
+    </script>
+</body>
+</html>

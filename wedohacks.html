@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEDOHACKS</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center; /* Center-align text */
+        }
+
+        h1 {
+            font-size: 50px;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Rolling text animation that generates random characters */
+        @keyframes rollText {
+            0% {
+                content: "ABCDEFGH";
+            }
+            10% {
+                content: "WJKLMNOPQ";
+            }
+            20% {
+                content: "WETUVWXYZ";
+            }
+            30% {
+                content: "WEDLMNOPQ";
+            }
+            40% {
+                content: "WEDOEFGHI";
+            }
+            50% {
+                content: "WEDOHWXYZ";
+            }
+            60% {
+                content: "WEDOHADEW";
+            }
+            70% {
+                content: "WEDOHACFY";
+            }
+            80% {
+                content: "WEDOHACKZ";
+            }
+            100% {
+                content: "WEDOHACKS";
+            }
+        }
+
+        /* Apply the rolling text animation */
+        h1::before {
+            content: "WEDOHACKS";
+            display: inline-block;
+            animation: rollText 2s ease-in-out forwards;
+            font-size: 50px;
+            color: #00ff00;
+        }
+
+        /* Style for the quote, initially hidden */
+        p {
+            font-size: 20px;
+            margin-top: 20px;
+            opacity: 0; /* Initially hidden */
+            animation: fadeIn 2s 2.5s forwards; /* Delay fade-in until after main animation */
+        }
+
+        /* Fade-in effect for quote */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <p>There is always one more bug to fix</p>
+</body>
+</html>
