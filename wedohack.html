@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WEDOHACKS</title>
+<style>
+    body {
+        font-family: monospace;
+        background-color: #000;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    .terminal {
+        width: 80%;
+        max-width: 800px;
+        margin: 50px auto;
+        border: 2px solid #666;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .terminal-header {
+        background-color: #333;
+        padding: 10px;
+    }
+    .terminal-body {
+        padding: 10px;
+        height: 300px; /* Adjust height as needed */
+        overflow-y: auto;
+        background-color: #000;
+    }
+    .terminal-footer {
+        background-color: #333;
+        padding: 10px;
+    }
+    .command {
+        color: #0f0;
+    }
+    .output {
+        color: #fff;
+    }
+</style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            WEDOHACKS
+        </div>
+        <div class="terminal-body" id="terminal-body">
+<div class="command">root@sijojohnson</span>:~$ ./wedohacks </div>
+            <div class="output">YOU ARE HIJACKED BY WEDOHACKS!</div>
+       </div>
+        <div class="terminal-footer">
+            <div class="output">copyright © sijo johnson</div>
+        </div>
+    </div>
+    <script>
+        // Function to set custom word in the terminal footer
+        function setCustomWord(word) {
+            document.getElementById('custom-word').textContent = word;
+        }
+    </script>
+</body>
+</html>
